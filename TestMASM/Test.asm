@@ -1,20 +1,11 @@
-.386
-
-.model flat, stdcall
-.stack 4096
+Include irvine32.inc
 
 .data
-sum DWORD ?
-ExitProcess PROTO, dwExitCode:DWORD
-
 .code
 
 main PROC
- mov eax, 1
- add eax, 5
- mov sum, eax
-
- INVOKE ExitProcess, 0
-
- main ENDP
- END main
+ mov eax, 12
+ call DumpRegs
+ exit
+main ENDP
+END main
